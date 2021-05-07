@@ -1,0 +1,56 @@
+set nocompatible              " " Use Vim settings, rather than Vi settings
+set softtabstop=2 " Indent by 2 spaces when hitting tab
+ set shiftwidth=4 " Indent by 4 spaces when auto-indenting
+ set tabstop=4 " Show existing tab with 4 spaces width
+ syntax on " Enable syntax highlighting
+ filetype indent on " Enable indenting for files
+ set autoindent " Enable auto indenting
+ set number " Enable line numbers
+ set relativenumber
+ augroup toggle_relative_number
+ autocmd InsertEnter * :setlocal norelativenumber
+ autocmd InsertLeave * :setlocal relativenumber
+ colorscheme elflord " Set nice looking colorscheme
+ set nobackup " Disable backup files
+ set laststatus=2 "show status line
+ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+ set wildmenu " Display command line's tab complete options as a menu.
+
+set confirm " Display a confirmation dialog when closing an unsaved file.
+set scrolloff=3 " The number of screen lines to keep above and below the cursor.
+set encoding=utf-8 " Use an encoding that supports Unicode.
+
+set ignorecase " Ignore case when searching
+set smartcase " . . . unless you type a capital.
+set hlsearch " Highlight searches by default
+set incsearch " Find the next match as we type the search.
+
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 40
+set directory=$HOME/.vim/swp// " div for swp files
+
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir " dir for undofiles
+
+if match($TERM, "screen")!=-1
+	  set term=xterm-256color
+endif
+"map <C-K> :bprev<CR> " open previus buffer by Ctrl-k
+"map <C-J> :bnext<CR> " open next buffer by Ctrl-j
+nnoremap <C-H> <C-W><C-H> " easier windows switching
+nnoremap <C-J> <C-W><C-J> " easier windows switching
+nnoremap <C-K> <C-W><C-K> " easier windows switching
+nnoremap <C-L> <C-W><C-L> " easier windows switching
+vnoremap . :normal.<CR> " make . to work with visually selected lines
+vnoremap J :m '>+1<CR>gv=gv " Move visual selection
+vnoremap K :m '<-2<CR>gv=gv " Move visual selection
+set foldenable "Enable folding
+set foldlevelstart=10 "Open most of the folds by default. If set to 0, all folds will be closed.
+set foldnestmax=10 "Folds can be nested. Setting a max value protects you from too many folds.
+set foldmethod=manual "Defines the type of folding.
+nmap <silent> ,/ :nohlsearch<CR> " to clear search tap ,/
+"Jump back to last edited buffer
+nnoremap <C-b> <C-^>
+inoremap <C-b> <esc><C-^>
+
