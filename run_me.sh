@@ -11,3 +11,6 @@ fi
 echo "create ~/.vim/swp  ~/.vim/undodir"
 mkdir ~/.vim/swp  ~/.vim/undodir 
 
+
+
+
