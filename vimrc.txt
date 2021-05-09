@@ -54,3 +54,5 @@ nmap <silent> ,/ :nohlsearch<CR> " to clear search tap ,/
 nnoremap <C-b> <C-^>
 inoremap <C-b> <esc><C-^>
 
+" tap F5 to write current time
+:inoremap <F5> <C-R>=strftime("%H:%M")<CR> 
