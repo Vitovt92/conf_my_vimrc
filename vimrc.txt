@@ -56,3 +56,5 @@ inoremap <C-b> <esc><C-^>
 
 " tap F5 to write current time
 :inoremap <F5> <C-R>=strftime("%H:%M")<CR> 
+" in normal mode push Ctrl-N twice to turn off/on line numbers
+noremap <F3> :set norelativenumber \| :set invnumber<CR>
